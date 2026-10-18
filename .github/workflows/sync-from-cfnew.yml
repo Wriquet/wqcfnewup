@@ -5,6 +5,10 @@ on:
   schedule:
     - cron: '0 */6 * * *'  # 每6小时自动检查一次
 
+# 需要向本仓库推送提交；fork 默认的 GITHUB_TOKEN 只有读权限，必须显式声明
+permissions:
+  contents: write
+
 jobs:
   sync-release:
     runs-on: ubuntu-latest
